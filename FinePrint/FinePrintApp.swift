@@ -1,12 +1,12 @@
 //
-//  Swift_BoilerplateApp.swift
-//  Swift-Boilerplate
+//  FinePrintApp.swift
+//  FinePrint
 //
-//  Created by Will Kusch on 5/31/25.
+//  Main app entry point
 //
 
 /*
- SWIFT BOILERPLATE APP - MAIN ENTRY POINT
+ FINEPRINT APP - MAIN ENTRY POINT
  
  This is the main app file that controls the entire application flow.
  
@@ -40,7 +40,7 @@
 import SwiftUI
 
 @main
-struct Swift_BoilerplateApp: App {
+struct FinePrintApp: App {
     
     // MARK: - State Management
     @StateObject private var userManager = UserManager.shared

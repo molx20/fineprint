@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(xcodebuild:*)",
+      "Bash(cat:*)",
+      "Bash(python3:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(python main.py:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

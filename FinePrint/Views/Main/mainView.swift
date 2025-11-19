@@ -138,38 +138,7 @@ struct MainView: View {
     }
 }
 
-// MARK: - Home View
-
-/// Main home view with placeholder content
-private struct HomeView: View {
-    @StateObject private var userManager = UserManager.shared
-    
-    var body: some View {
-        NavigationView {
-            VStack(spacing: 20) {
-                Spacer()
-                
-                Text("This is where your main app content goes")
-                    .font(.titleLarge)
-                    .foregroundColor(Color.textPrimary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 40)
-                
-                Text("Replace this placeholder with your app's main functionality")
-                    .font(.bodyMedium)
-                    .foregroundColor(Color.textSecondary)
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal, 40)
-                
-                Spacer()
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.backgroundPrimary)
-            .navigationTitle("Home")
-            .navigationBarTitleDisplayMode(.large)
-        }
-    }
-}
+// HomeView is now defined in homeView.swift
 
 // MARK: - Preview
 
