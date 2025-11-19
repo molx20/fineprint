@@ -84,11 +84,12 @@ def analyze_fine_print(combined_text: str) -> Dict:
         logger.info(f"Sending {len(combined_text)} characters to OpenAI for analysis...")
 
         # Truncate if too long to fit within organization's token limit
-        # Organization limit: 30,000 tokens per request
+        # Organization limit: 30,000 tokens per minute (TPM)
         # Rough estimate: 1 token ≈ 4 characters
         # Account for prompt overhead (~2000 tokens) and response (~2000 tokens)
-        # Safe limit for input text: (30000 - 4000) * 4 = 104,000 chars
-        max_chars = 100000
+        # Safe limit for input text to stay under 30k tokens: (30000 - 4000) * 4 = 104,000 chars
+        # Using 60,000 chars to be extra safe and avoid rate limits
+        max_chars = 60000
         if len(combined_text) > max_chars:
             logger.warning(f"Text too long ({len(combined_text)} chars), truncating to {max_chars}")
             combined_text = combined_text[:max_chars] + "\n\n[... content truncated due to length ...]"
