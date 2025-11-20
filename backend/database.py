@@ -87,6 +87,11 @@ def check_scan_limit(db, user_id: str) -> tuple[bool, str]:
 
     user = get_or_create_user(db, user_id)
 
+    # Developer/admin user always has unlimited scans
+    # You can add your device's user_id here for unlimited access
+    if user_id.startswith("admin_") or user_id.startswith("dev_"):
+        return True, "Developer unlimited scans"
+
     # Paid users have unlimited scans
     if user.is_paid:
         return True, "Unlimited scans available"

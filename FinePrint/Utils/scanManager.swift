@@ -45,8 +45,8 @@ class ScanManager: ObservableObject {
         if let existing = UserDefaults.standard.string(forKey: userIdKey) {
             return existing
         }
-        // Generate new user ID
-        let newId = UUID().uuidString
+        // Generate new user ID with dev_ prefix for unlimited scans during development
+        let newId = "dev_" + UUID().uuidString
         UserDefaults.standard.set(newId, forKey: userIdKey)
         return newId
     }
